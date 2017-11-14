@@ -3,7 +3,8 @@ var utils = require('./utils');
 var urlss = require('url');
 
 var callback = function(req,res){
-    var urlObj = urlss.parse(req.url);
+    //true将query转为对象
+    var urlObj = urlss.parse(req.url,true);
     var pathname = urlObj.pathname;
     console.log(urlObj,pathname,urlObj.query.username,urlObj.query.password);
     if(pathname == '/'){
